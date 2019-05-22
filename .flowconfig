@@ -1,0 +1,17 @@
+[ignore]
+.*/node_modules/.*
+.*/coverage/.*
+.*/build/.*
+.*\.test\.js
+.*/scripts/.*
+[include]
+
+[libs]
+flow-typed/
+node_modules/@ge/px-icon-react/flow-typed/lib/
+
+[lints]
+
+[options]
+
+[strict]

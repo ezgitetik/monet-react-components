@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import type { ContextRouter } from 'react-router-dom';
+import {ROUTE as HOME_ROUTE} from "./Home";
+import Home from "./Home/Home";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type Props = ContextRouter;
+
+class App extends React.PureComponent<Props> {
+    render() {
+        return (
+            <Switch>
+                <Route path={`${HOME_ROUTE}`} component={Home}/>
+                <Redirect exact from='/' to={`${HOME_ROUTE}`}/>
+            </Switch>
+        );
+    }
 }
 
 export default App;
